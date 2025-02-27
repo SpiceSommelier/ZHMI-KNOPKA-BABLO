@@ -13,6 +13,12 @@
       flex-direction: column;
     "
   >
+    <img
+      src="sasavot-сасавот.gif"
+      alt=""
+      id="prikol"
+      style="position: absolute; top: 20%; left: 35%; display: none"
+    />
     <h1
       style="display: block; margin: auto; margin-bottom: 100px; color: white"
     >
@@ -24,6 +30,7 @@
         width: 500px;
         height: 300px;
         margin: auto;
+        font-size: 50px;
         background-color: red;
         color: white;
       "
@@ -44,11 +51,49 @@
         0
       </div>
     </div>
+    <button
+      id="withdraw-100"
+      style="
+        font-size: 32px;
+        color: white;
+        width: 300px;
+        background-color: grey;
+        margin: 0 auto;
+        margin-bottom: 40px;
+      "
+    >
+      ВЫВЕСТИ 100
+    </button>
+    <button
+      id="withdraw-all"
+      style="
+        font-size: 32px;
+        color: white;
+        width: 300px;
+        background-color: grey;
+        margin: 0 auto;
+      "
+    >
+      ВЫВЕСТИ ВСЕ
+    </button>
     <script>
       const output = document.getElementById('output')
       const btn = document.getElementById('btn')
       btn.addEventListener('click', () => {
         output.innerText = Number(output.innerText) + 1
+      })
+      const btnWidthdraw100 = document.getElementById('withdraw-100')
+      btnWidthdraw100.addEventListener('click', () => {
+        output.innerText = Number(output.innerText) - 100
+      })
+      const btnWidthdrawAll = document.getElementById('withdraw-all')
+      btnWidthdrawAll.addEventListener('click', () => {
+        output.innerText = 0
+        const img = document.getElementById('prikol')
+        img.style.display = 'block'
+        setTimeout(() => {
+          img.style.display = 'none'
+        }, 2000)
       })
     </script>
   </body>
