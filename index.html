@@ -5,14 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>КНОПКА БАБЛО</title>
   </head>
-  <body style="background-color: gray; display: flex; flex-direction: column">
-    <h1 style="display: block; margin: auto; margin-bottom: 100px">
+  <body
+    style="
+      background-color: gray;
+      background-image: url(./images.jpg);
+      display: flex;
+      flex-direction: column;
+    "
+  >
+    <h1
+      style="display: block; margin: auto; margin-bottom: 100px; color: white"
+    >
       ЖМИ КНОПКА БАБЛО
     </h1>
     <button
-      style="width: 500px; height: 300px; margin: auto; background-color: red"
+      id="btn"
+      style="
+        width: 500px;
+        height: 300px;
+        margin: auto;
+        background-color: red;
+        color: white;
+      "
     >
       КНОПКА БАБЛО
     </button>
+    <div style="display: flex; margin: auto">
+      <p style="font-size: 32px; color: white">УЖЕ ДЕНЕГ:</p>
+      <div
+        id="output"
+        style="
+          margin-top: 32px;
+          margin-left: 10px;
+          font-size: 32px;
+          color: white;
+        "
+      >
+        0
+      </div>
+    </div>
+    <script>
+      const output = document.getElementById('output')
+      const btn = document.getElementById('btn')
+      btn.addEventListener('click', () => {
+        output.innerText = Number(output.innerText) + 1
+      })
+    </script>
   </body>
 </html>
